@@ -1,0 +1,21 @@
+version: "3.3"
+services:
+  backend:
+    build:
+      context: ../../
+      dockerfile: ./cmd/logql-debugger/Dockerfile
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "3002:80"
+    volumes:
+      - ./debugger.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - backend
+      - docs
+
+  docs:
+    image: grafana/docs-base:latest
+    volumes:
+      - ../../docs/sources:/hugo/content/docs/loki/latest
