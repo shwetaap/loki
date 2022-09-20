@@ -292,6 +292,8 @@ func TestConfigureDeploymentForMode(t *testing.T) {
 									Args: []string{
 										"--log.level=warn",
 										"--tls.min-version=VersionTLS12",
+										"--opa.skip-tenants=audit,infrastructure",
+										"--opa.admin-groups=system:cluster-admins,cluster-admin,dedicated-admin",
 										"--opa.package=lokistack",
 										"--opa.matcher=kubernetes_namespace_name",
 										"--web.listen=:8082",
@@ -466,6 +468,8 @@ func TestConfigureDeploymentForMode(t *testing.T) {
 									Args: []string{
 										"--log.level=warn",
 										"--tls.min-version=VersionTLS12",
+										"--opa.skip-tenants=audit,infrastructure",
+										"--opa.admin-groups=system:cluster-admins,cluster-admin,dedicated-admin",
 										"--opa.package=lokistack",
 										"--opa.matcher=kubernetes_namespace_name",
 										"--web.listen=:8082",
@@ -658,6 +662,8 @@ func TestConfigureDeploymentForMode(t *testing.T) {
 									Args: []string{
 										"--log.level=warn",
 										"--tls.min-version=VersionTLS12",
+										"--opa.skip-tenants=audit,infrastructure",
+										"--opa.admin-groups=system:cluster-admins,cluster-admin,dedicated-admin",
 										"--opa.package=lokistack",
 										"--opa.matcher=kubernetes_namespace_name",
 										"--web.listen=:8082",

@@ -36,6 +36,8 @@ func newOPAOpenShiftContainer(secretVolumeName, tlsDir, certFile, keyFile string
 	args = []string{
 		"--log.level=warn",
 		"--tls.min-version=VersionTLS12",
+		"--opa.skip-tenants=audit,infrastructure",
+		"--opa.admin-groups=system:cluster-admins,cluster-admin,dedicated-admin",
 		fmt.Sprintf("--opa.package=%s", opaDefaultPackage),
 		fmt.Sprintf("--opa.matcher=%s", opaDefaultLabelMatcher),
 		fmt.Sprintf("--web.listen=:%d", GatewayOPAHTTPPort),
