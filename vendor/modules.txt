@@ -101,8 +101,8 @@ github.com/PuerkitoBio/purell
 # github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578
 ## explicit
 github.com/PuerkitoBio/urlesc
-# github.com/Shopify/sarama v1.30.0
-## explicit; go 1.13
+# github.com/Shopify/sarama v1.36.0
+## explicit; go 1.16
 github.com/Shopify/sarama
 # github.com/Workiva/go-datastructures v1.0.53
 ## explicit; go 1.15
@@ -321,8 +321,8 @@ github.com/drone/envsubst/path
 # github.com/dustin/go-humanize v1.0.0
 ## explicit
 github.com/dustin/go-humanize
-# github.com/eapache/go-resiliency v1.2.0
-## explicit
+# github.com/eapache/go-resiliency v1.3.0
+## explicit; go 1.13
 github.com/eapache/go-resiliency/breaker
 # github.com/eapache/go-xerial-snappy v0.0.0-20180814174437-776d5712da21
 ## explicit
@@ -609,7 +609,7 @@ github.com/hashicorp/go-rootcerts
 # github.com/hashicorp/go-sockaddr v1.0.2
 ## explicit
 github.com/hashicorp/go-sockaddr
-# github.com/hashicorp/go-uuid v1.0.2
+# github.com/hashicorp/go-uuid v1.0.3
 ## explicit
 github.com/hashicorp/go-uuid
 # github.com/hashicorp/golang-lru v0.5.4
@@ -655,12 +655,12 @@ github.com/jcmturner/aescts/v2
 # github.com/jcmturner/dnsutils/v2 v2.0.0
 ## explicit; go 1.13
 github.com/jcmturner/dnsutils/v2
-# github.com/jcmturner/gofork v1.0.0
-## explicit
+# github.com/jcmturner/gofork v1.7.6
+## explicit; go 1.7
 github.com/jcmturner/gofork/encoding/asn1
 github.com/jcmturner/gofork/x/crypto/pbkdf2
-# github.com/jcmturner/gokrb5/v8 v8.4.2
-## explicit; go 1.14
+# github.com/jcmturner/gokrb5/v8 v8.4.3
+## explicit; go 1.16
 github.com/jcmturner/gokrb5/v8/asn1tools
 github.com/jcmturner/gokrb5/v8/client
 github.com/jcmturner/gokrb5/v8/config
@@ -713,13 +713,14 @@ github.com/json-iterator/go
 # github.com/julienschmidt/httprouter v1.3.0
 ## explicit; go 1.7
 github.com/julienschmidt/httprouter
-# github.com/klauspost/compress v1.14.1
-## explicit; go 1.15
+# github.com/klauspost/compress v1.15.9
+## explicit; go 1.16
 github.com/klauspost/compress
 github.com/klauspost/compress/flate
 github.com/klauspost/compress/fse
 github.com/klauspost/compress/gzip
 github.com/klauspost/compress/huff0
+github.com/klauspost/compress/internal/cpuinfo
 github.com/klauspost/compress/internal/snapref
 github.com/klauspost/compress/s2
 github.com/klauspost/compress/zstd
@@ -835,11 +836,7 @@ github.com/opentracing-contrib/go-stdlib/nethttp
 github.com/opentracing/opentracing-go
 github.com/opentracing/opentracing-go/ext
 github.com/opentracing/opentracing-go/log
-# github.com/pierrec/lz4 v2.6.1+incompatible
-## explicit
-github.com/pierrec/lz4
-github.com/pierrec/lz4/internal/xxh32
-# github.com/pierrec/lz4/v4 v4.1.12
+# github.com/pierrec/lz4/v4 v4.1.15
 ## explicit; go 1.14
 github.com/pierrec/lz4/v4
 github.com/pierrec/lz4/v4/internal/lz4block
@@ -994,10 +991,10 @@ github.com/spf13/cast
 # github.com/spf13/pflag v1.0.5
 ## explicit; go 1.12
 github.com/spf13/pflag
-# github.com/stretchr/objx v0.2.0
+# github.com/stretchr/objx v0.4.0
 ## explicit; go 1.12
 github.com/stretchr/objx
-# github.com/stretchr/testify v1.7.2
+# github.com/stretchr/testify v1.8.0
 ## explicit; go 1.13
 github.com/stretchr/testify/assert
 github.com/stretchr/testify/mock
@@ -1077,10 +1074,10 @@ github.com/willf/bloom
 # github.com/xdg-go/pbkdf2 v1.0.0
 ## explicit; go 1.9
 github.com/xdg-go/pbkdf2
-# github.com/xdg-go/scram v1.0.2
+# github.com/xdg-go/scram v1.1.1
 ## explicit; go 1.11
 github.com/xdg-go/scram
-# github.com/xdg-go/stringprep v1.0.2
+# github.com/xdg-go/stringprep v1.0.3
 ## explicit; go 1.11
 github.com/xdg-go/stringprep
 # github.com/yuin/gopher-lua v0.0.0-20200816102855-ee81675732da
@@ -1196,7 +1193,7 @@ go4.org/intern
 # go4.org/unsafe/assume-no-moving-gc v0.0.0-20220617031537-928513b29760
 ## explicit; go 1.11
 go4.org/unsafe/assume-no-moving-gc
-# golang.org/x/crypto v0.0.0-20220214200702-86341886e292
+# golang.org/x/crypto v0.0.0-20220722155217-630584e8d5aa
 ## explicit; go 1.17
 golang.org/x/crypto/argon2
 golang.org/x/crypto/bcrypt
@@ -1211,7 +1208,7 @@ golang.org/x/crypto/sha3
 # golang.org/x/mod v0.6.0-dev.0.20220106191415-9b9b3d81d5e3
 ## explicit; go 1.17
 golang.org/x/mod/semver
-# golang.org/x/net v0.0.0-20220706163947-c90051bbdb60
+# golang.org/x/net v0.0.0-20220809184613-07c6da5e1ced
 ## explicit; go 1.17
 golang.org/x/net/bpf
 golang.org/x/net/context
@@ -1241,7 +1238,7 @@ golang.org/x/oauth2/google/internal/externalaccount
 golang.org/x/oauth2/internal
 golang.org/x/oauth2/jws
 golang.org/x/oauth2/jwt
-# golang.org/x/sync v0.0.0-20220601150217-0de741cfad7f
+# golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4
 ## explicit
 golang.org/x/sync/errgroup
 golang.org/x/sync/semaphore

@@ -12,7 +12,7 @@ require (
 	github.com/Azure/go-autorest/autorest/azure/auth v0.5.8
 	github.com/Masterminds/sprig/v3 v3.2.2
 	github.com/NYTimes/gziphandler v1.1.1
-	github.com/Shopify/sarama v1.30.0
+	github.com/Shopify/sarama v1.36.0
 	github.com/Workiva/go-datastructures v1.0.53
 	github.com/alicebob/miniredis/v2 v2.14.3
 	github.com/aws/aws-sdk-go v1.44.29
@@ -63,7 +63,7 @@ require (
 	github.com/jmespath/go-jmespath v0.4.0
 	github.com/joncrlsn/dque v2.2.1-0.20200515025108-956d14155fa2+incompatible
 	github.com/json-iterator/go v1.1.12
-	github.com/klauspost/compress v1.14.1
+	github.com/klauspost/compress v1.15.9
 	github.com/klauspost/pgzip v1.2.5
 	github.com/mattn/go-ieproxy v0.0.1
 	github.com/minio/minio-go/v7 v7.0.24
@@ -77,7 +77,7 @@ require (
 	github.com/opentracing-contrib/go-stdlib v1.0.0
 	github.com/opentracing/opentracing-go v1.2.0
 	// github.com/pierrec/lz4 v2.0.5+incompatible
-	github.com/pierrec/lz4/v4 v4.1.12
+	github.com/pierrec/lz4/v4 v4.1.15
 	github.com/pkg/errors v0.9.1
 	github.com/prometheus/client_golang v1.13.0
 	github.com/prometheus/client_model v0.2.0
@@ -88,18 +88,18 @@ require (
 	github.com/shurcooL/vfsgen v0.0.0-20200824052919-0d455de96546
 	github.com/sony/gobreaker v0.4.1
 	github.com/spf13/afero v1.6.0
-	github.com/stretchr/testify v1.7.2
+	github.com/stretchr/testify v1.8.0
 	github.com/thanos-io/thanos v0.22.0
 	github.com/tonistiigi/fifo v0.0.0-20190226154929-a9fb20d87448
 	github.com/uber/jaeger-client-go v2.30.0+incompatible
 	github.com/weaveworks/common v0.0.0-20220809154356-72ba250fe659
-	github.com/xdg-go/scram v1.0.2
+	github.com/xdg-go/scram v1.1.1
 	go.etcd.io/bbolt v1.3.6
 	go.uber.org/atomic v1.9.0
 	go.uber.org/goleak v1.1.12
-	golang.org/x/crypto v0.0.0-20220214200702-86341886e292
-	golang.org/x/net v0.0.0-20220706163947-c90051bbdb60
-	golang.org/x/sync v0.0.0-20220601150217-0de741cfad7f
+	golang.org/x/crypto v0.0.0-20220722155217-630584e8d5aa
+	golang.org/x/net v0.0.0-20220809184613-07c6da5e1ced
+	golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4
 	golang.org/x/sys v0.0.0-20220829200755-d48e67d00261
 	golang.org/x/time v0.0.0-20220609170525-579cf78fd858
 	google.golang.org/api v0.93.0
@@ -159,7 +159,7 @@ require (
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/docker/go-metrics v0.0.1 // indirect
 	github.com/docker/go-units v0.4.0 // indirect
-	github.com/eapache/go-resiliency v1.2.0 // indirect
+	github.com/eapache/go-resiliency v1.3.0 // indirect
 	github.com/eapache/go-xerial-snappy v0.0.0-20180814174437-776d5712da21 // indirect
 	github.com/eapache/queue v1.1.0 // indirect
 	github.com/edsrzf/mmap-go v1.1.0 // indirect
@@ -202,14 +202,14 @@ require (
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
 	github.com/hashicorp/go-rootcerts v1.0.2 // indirect
 	github.com/hashicorp/go-sockaddr v1.0.2 // indirect
-	github.com/hashicorp/go-uuid v1.0.2 // indirect
+	github.com/hashicorp/go-uuid v1.0.3 // indirect
 	github.com/hashicorp/memberlist v0.3.1 // indirect
 	github.com/hashicorp/serf v0.9.6 // indirect
 	github.com/huandu/xstrings v1.3.1 // indirect
 	github.com/jcmturner/aescts/v2 v2.0.0 // indirect
 	github.com/jcmturner/dnsutils/v2 v2.0.0 // indirect
-	github.com/jcmturner/gofork v1.0.0 // indirect
-	github.com/jcmturner/gokrb5/v8 v8.4.2 // indirect
+	github.com/jcmturner/gofork v1.7.6 // indirect
+	github.com/jcmturner/gokrb5/v8 v8.4.3 // indirect
 	github.com/jcmturner/rpc/v2 v2.0.3 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/jpillora/backoff v1.0.0 // indirect
@@ -231,7 +231,6 @@ require (
 	github.com/morikuni/aec v1.0.0 // indirect
 	github.com/opencontainers/go-digest v1.0.0 // indirect
 	github.com/opencontainers/image-spec v1.0.2 // indirect
-	github.com/pierrec/lz4 v2.6.1+incompatible // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/prometheus/exporter-toolkit v0.7.1 // indirect
 	github.com/prometheus/procfs v0.8.0 // indirect
@@ -244,13 +243,13 @@ require (
 	github.com/spaolacci/murmur3 v0.0.0-20180118202830-f09979ecbc72 // indirect
 	github.com/spf13/cast v1.3.1 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
-	github.com/stretchr/objx v0.2.0 // indirect
+	github.com/stretchr/objx v0.4.0 // indirect
 	github.com/uber/jaeger-lib v2.4.1+incompatible // indirect
 	github.com/ugorji/go/codec v1.1.7 // indirect
 	github.com/weaveworks/promrus v1.2.0 // indirect
 	github.com/willf/bitset v1.1.11 // indirect
 	github.com/xdg-go/pbkdf2 v1.0.0 // indirect
-	github.com/xdg-go/stringprep v1.0.2 // indirect
+	github.com/xdg-go/stringprep v1.0.3 // indirect
 	github.com/yuin/gopher-lua v0.0.0-20200816102855-ee81675732da // indirect
 	go.etcd.io/etcd/api/v3 v3.5.0 // indirect
 	go.etcd.io/etcd/client/pkg/v3 v3.5.0 // indirect
