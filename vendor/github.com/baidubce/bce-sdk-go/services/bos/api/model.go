@@ -102,6 +102,7 @@ type GrantType struct {
 	Resource    []string      `json:"resource,omitempty"`
 	NotResource []string      `json:"notResource,omitempty"`
 	Condition   AclCondType   `json:"condition,omitempty"`
+	Effect      string        `json:"effect,omitempty"`
 }
 
 // PutBucketAclArgs defines the input args structure for putting bucket acl.
@@ -125,7 +126,7 @@ type PutBucketLoggingArgs struct {
 type GetBucketLoggingResult struct {
 	Status       string `json:"status"`
 	TargetBucket string `json:"targetBucket,omitempty"`
-	TargetPrefix string `json:"targetPrefix, omitempty"`
+	TargetPrefix string `json:"targetPrefix,omitempty"`
 }
 
 // LifecycleConditionTimeType defines the structure of time condition
@@ -320,8 +321,8 @@ type SelectObjectResult struct {
 
 // selectObject request args
 type SelectObjectArgs struct {
-	SelectType    string               `json: "-"`
-	SelectRequest *SelectObjectRequest `json: "selectRequest"`
+	SelectType    string               `json:"-"`
+	SelectRequest *SelectObjectRequest `json:"selectRequest"`
 }
 
 type SelectObjectRequest struct {
