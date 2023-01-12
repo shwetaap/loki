@@ -166,6 +166,7 @@ func NewQueryFrontendDeployment(opts Options) *appsv1.Deployment {
 func NewQueryFrontendGRPCService(opts Options) *corev1.Service {
 	serviceName := serviceNameQueryFrontendGRPC(opts.Name)
 	labels := ComponentLabels(LabelQueryFrontendComponent, opts.Name)
+	preferDual := corev1.IPFamilyPolicyPreferDualStack
 
 	return &corev1.Service{
 		TypeMeta: metav1.TypeMeta{
@@ -178,6 +179,11 @@ func NewQueryFrontendGRPCService(opts Options) *corev1.Service {
 		},
 		Spec: corev1.ServiceSpec{
 			ClusterIP: "None",
+			IPFamilies: []corev1.IPFamily{
+				corev1.IPv6Protocol,
+				corev1.IPv4Protocol,
+			},
+			IPFamilyPolicy: &preferDual,
 			Ports: []corev1.ServicePort{
 				{
 					Name:       lokiGRPCPortName,
@@ -195,6 +201,7 @@ func NewQueryFrontendGRPCService(opts Options) *corev1.Service {
 func NewQueryFrontendHTTPService(opts Options) *corev1.Service {
 	serviceName := serviceNameQueryFrontendHTTP(opts.Name)
 	labels := ComponentLabels(LabelQueryFrontendComponent, opts.Name)
+	preferDual := corev1.IPFamilyPolicyPreferDualStack
 
 	return &corev1.Service{
 		TypeMeta: metav1.TypeMeta{
@@ -206,6 +213,11 @@ func NewQueryFrontendHTTPService(opts Options) *corev1.Service {
 			Labels: labels,
 		},
 		Spec: corev1.ServiceSpec{
+			IPFamilies: []corev1.IPFamily{
+				corev1.IPv6Protocol,
+				corev1.IPv4Protocol,
+			},
+			IPFamilyPolicy: &preferDual,
 			Ports: []corev1.ServicePort{
 				{
 					Name:       lokiHTTPPortName,

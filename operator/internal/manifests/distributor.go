@@ -154,6 +154,7 @@ func NewDistributorDeployment(opts Options) *appsv1.Deployment {
 func NewDistributorGRPCService(opts Options) *corev1.Service {
 	serviceName := serviceNameDistributorGRPC(opts.Name)
 	labels := ComponentLabels(LabelDistributorComponent, opts.Name)
+	preferDual := corev1.IPFamilyPolicyPreferDualStack
 
 	return &corev1.Service{
 		TypeMeta: metav1.TypeMeta{
@@ -166,6 +167,11 @@ func NewDistributorGRPCService(opts Options) *corev1.Service {
 		},
 		Spec: corev1.ServiceSpec{
 			ClusterIP: "None",
+			IPFamilies: []corev1.IPFamily{
+				corev1.IPv6Protocol,
+				corev1.IPv4Protocol,
+			},
+			IPFamilyPolicy: &preferDual,
 			Ports: []corev1.ServicePort{
 				{
 					Name:       lokiGRPCPortName,
@@ -183,6 +189,7 @@ func NewDistributorGRPCService(opts Options) *corev1.Service {
 func NewDistributorHTTPService(opts Options) *corev1.Service {
 	serviceName := serviceNameDistributorHTTP(opts.Name)
 	labels := ComponentLabels(LabelDistributorComponent, opts.Name)
+	preferDual := corev1.IPFamilyPolicyPreferDualStack
 
 	return &corev1.Service{
 		TypeMeta: metav1.TypeMeta{
@@ -194,6 +201,11 @@ func NewDistributorHTTPService(opts Options) *corev1.Service {
 			Labels: labels,
 		},
 		Spec: corev1.ServiceSpec{
+			IPFamilies: []corev1.IPFamily{
+				corev1.IPv6Protocol,
+				corev1.IPv4Protocol,
+			},
+			IPFamilyPolicy: &preferDual,
 			Ports: []corev1.ServicePort{
 				{
 					Name:       lokiHTTPPortName,

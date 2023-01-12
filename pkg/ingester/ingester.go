@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"strings"
 	"sync"
 	"time"
 
@@ -285,6 +286,11 @@ func New(cfg Config, clientConfig client.Config, store ChunkStore, limits *valid
 	i.lifecycler, err = ring.NewLifecycler(cfg.LifecyclerConfig, i, "ingester", RingKey, !cfg.WAL.Enabled || cfg.WAL.FlushOnShutdown, util_log.Logger, prometheus.WrapRegistererWithPrefix("cortex_", registerer))
 	if err != nil {
 		return nil, err
+	}
+
+	if strings.Contains(i.lifecycler.Addr, ":9095") { 
+	        v := strings.Split(i.lifecycler.Addr, ":9095")
+	        i.lifecycler.Addr = "[" + v[0] + "]:9095"
 	}
 
 	i.lifecyclerWatcher = services.NewFailureWatcher()

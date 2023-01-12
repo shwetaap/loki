@@ -235,6 +235,7 @@ func NewRulerStatefulSet(opts Options) *appsv1.StatefulSet {
 func NewRulerGRPCService(opts Options) *corev1.Service {
 	serviceName := serviceNameRulerGRPC(opts.Name)
 	labels := ComponentLabels(LabelRulerComponent, opts.Name)
+	preferDual := corev1.IPFamilyPolicyPreferDualStack
 
 	return &corev1.Service{
 		TypeMeta: metav1.TypeMeta{
@@ -247,6 +248,11 @@ func NewRulerGRPCService(opts Options) *corev1.Service {
 		},
 		Spec: corev1.ServiceSpec{
 			ClusterIP: "None",
+			IPFamilies: []corev1.IPFamily{
+				corev1.IPv6Protocol,
+				corev1.IPv4Protocol,
+			},
+			IPFamilyPolicy: &preferDual,
 			Ports: []corev1.ServicePort{
 				{
 					Name:       lokiGRPCPortName,
@@ -264,6 +270,7 @@ func NewRulerGRPCService(opts Options) *corev1.Service {
 func NewRulerHTTPService(opts Options) *corev1.Service {
 	serviceName := serviceNameRulerHTTP(opts.Name)
 	labels := ComponentLabels(LabelRulerComponent, opts.Name)
+	preferDual := corev1.IPFamilyPolicyPreferDualStack
 
 	return &corev1.Service{
 		TypeMeta: metav1.TypeMeta{
@@ -275,6 +282,11 @@ func NewRulerHTTPService(opts Options) *corev1.Service {
 			Labels: labels,
 		},
 		Spec: corev1.ServiceSpec{
+			IPFamilies: []corev1.IPFamily{
+				corev1.IPv6Protocol,
+				corev1.IPv4Protocol,
+			},
+			IPFamilyPolicy: &preferDual,
 			Ports: []corev1.ServicePort{
 				{
 					Name:       lokiHTTPPortName,

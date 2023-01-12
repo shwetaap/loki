@@ -159,6 +159,7 @@ func NewQuerierDeployment(opts Options) *appsv1.Deployment {
 func NewQuerierGRPCService(opts Options) *corev1.Service {
 	serviceName := serviceNameQuerierGRPC(opts.Name)
 	labels := ComponentLabels(LabelQuerierComponent, opts.Name)
+	preferDual := corev1.IPFamilyPolicyPreferDualStack
 
 	return &corev1.Service{
 		TypeMeta: metav1.TypeMeta{
@@ -171,6 +172,11 @@ func NewQuerierGRPCService(opts Options) *corev1.Service {
 		},
 		Spec: corev1.ServiceSpec{
 			ClusterIP: "None",
+			IPFamilies: []corev1.IPFamily{
+				corev1.IPv6Protocol,
+				corev1.IPv4Protocol,
+			},
+			IPFamilyPolicy: &preferDual,
 			Ports: []corev1.ServicePort{
 				{
 					Name:       lokiGRPCPortName,
@@ -188,6 +194,7 @@ func NewQuerierGRPCService(opts Options) *corev1.Service {
 func NewQuerierHTTPService(opts Options) *corev1.Service {
 	serviceName := serviceNameQuerierHTTP(opts.Name)
 	labels := ComponentLabels(LabelQuerierComponent, opts.Name)
+	preferDual := corev1.IPFamilyPolicyPreferDualStack
 
 	return &corev1.Service{
 		TypeMeta: metav1.TypeMeta{
@@ -199,6 +206,11 @@ func NewQuerierHTTPService(opts Options) *corev1.Service {
 			Labels: labels,
 		},
 		Spec: corev1.ServiceSpec{
+			IPFamilies: []corev1.IPFamily{
+				corev1.IPv6Protocol,
+				corev1.IPv4Protocol,
+			},
+			IPFamilyPolicy: &preferDual,
 			Ports: []corev1.ServicePort{
 				{
 					Name:       lokiHTTPPortName,

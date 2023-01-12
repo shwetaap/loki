@@ -53,6 +53,8 @@ type Address struct {
 	FQDN string
 	// Port is required
 	Port int
+	// Addr is optional
+	Addr string
 }
 
 // Ruler configuration

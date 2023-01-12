@@ -68,7 +68,7 @@ func (cfg *RingConfig) RegisterFlagsWithPrefix(flagsPrefix, storePrefix string, 
 
 // ToLifecyclerConfig returns a LifecyclerConfig based on the compactor ring config.
 func (cfg *RingConfig) ToLifecyclerConfig(numTokens int, logger log.Logger) (ring.BasicLifecyclerConfig, error) {
-	instanceAddr, err := ring.GetInstanceAddr(cfg.InstanceAddr, cfg.InstanceInterfaceNames, logger)
+	instanceAddr, err := ring.GetInstanceAddr(cfg.InstanceAddr, cfg.InstanceInterfaceNames, logger, true)
 	if err != nil {
 		return ring.BasicLifecyclerConfig{}, err
 	}

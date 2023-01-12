@@ -146,6 +146,7 @@ func ConfigOptions(opt Options) config.Options {
 			Port: grpcPort,
 		},
 		GossipRing: config.Address{
+			Addr: gossipAddr,
 			FQDN: fqdn(BuildLokiGossipRingService(opt.Name).GetName(), opt.Namespace),
 			Port: gossipPort,
 		},

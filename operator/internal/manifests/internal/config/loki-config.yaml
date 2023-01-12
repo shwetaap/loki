@@ -95,6 +95,7 @@ ingester:
     heartbeat_period: 5s
     join_after: 30s
     num_tokens: 512
+    enable_inet6: true
     ring:
       replication_factor: {{ .Stack.ReplicationFactor }}
       heartbeat_timeout: 1m
@@ -166,6 +167,7 @@ limits_config:
   split_queries_by_interval: 30m
 memberlist:
   abort_if_cluster_join_fails: true
+  bind_addr: {{ .GossipRing.Addr }}
   bind_port: {{ .GossipRing.Port }}
   join_members:
     - {{ .GossipRing.FQDN }}:{{ .GossipRing.Port }}

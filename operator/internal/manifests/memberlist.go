@@ -11,6 +11,7 @@ import (
 
 // BuildLokiGossipRingService creates a k8s service for the gossip/memberlist members of the cluster
 func BuildLokiGossipRingService(stackName string) *corev1.Service {
+	preferDual := corev1.IPFamilyPolicyPreferDualStack
 	return &corev1.Service{
 		TypeMeta: metav1.TypeMeta{
 			Kind:       "Service",
@@ -22,6 +23,11 @@ func BuildLokiGossipRingService(stackName string) *corev1.Service {
 		},
 		Spec: corev1.ServiceSpec{
 			ClusterIP: "None",
+			IPFamilies: []corev1.IPFamily{
+				corev1.IPv6Protocol,
+				corev1.IPv4Protocol,
+			},
+			IPFamilyPolicy: &preferDual,
 			Ports: []corev1.ServicePort{
 				{
 					Name:       lokiGossipPortName,
