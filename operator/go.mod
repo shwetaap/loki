@@ -15,7 +15,7 @@ require (
 	github.com/openshift/library-go v0.0.0-20230302173334-c5e706838384
 	github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring v0.67.0
 	github.com/prometheus/client_golang v1.16.0
-	github.com/prometheus/common v0.42.0
+	github.com/prometheus/common v0.44.0
 	github.com/prometheus/prometheus v0.42.0
 	github.com/stretchr/testify v1.8.4
 	gopkg.in/yaml.v2 v2.4.0
@@ -135,7 +135,7 @@ require (
 	golang.org/x/exp v0.0.0-20230124195608-d38c7dcee874 // indirect
 	golang.org/x/mod v0.10.0 // indirect
 	golang.org/x/net v0.10.0 // indirect
-	golang.org/x/oauth2 v0.5.0 // indirect
+	golang.org/x/oauth2 v0.8.0 // indirect
 	golang.org/x/sync v0.2.0 // indirect
 	golang.org/x/sys v0.8.0 // indirect
 	golang.org/x/term v0.8.0 // indirect
