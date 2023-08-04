@@ -13,7 +13,7 @@ require (
 	github.com/maxbrunsfeld/counterfeiter/v6 v6.6.2
 	github.com/openshift/api v0.0.0-20230228142948-d170fcdc0fa6 // release-4.13
 	github.com/openshift/library-go v0.0.0-20230302173334-c5e706838384
-	github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring v0.67.0
+	github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring v0.67.1
 	github.com/prometheus/client_golang v1.16.0
 	github.com/prometheus/common v0.44.0
 	github.com/prometheus/prometheus v0.46.0
